@@ -11,7 +11,7 @@ $user = getUser($id);
 </head>
 
 <body>
-    <form method="POST" action="updateblog.php" enctype="multipart/form-data">
+    <form method="POST" action="../controller/updateblog.php" enctype="multipart/form-data">
         postdescription: <input type="text" name="postdescription" value="<?= $user['postdescription'] ?>" /><br>
         title: <input type="text" name="title" value="<?= $user['title'] ?>" /> <br>
         link: <input type="text" name="link" value="<?= $user['link'] ?>" /> <br>

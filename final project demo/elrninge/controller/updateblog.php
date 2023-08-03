@@ -1,7 +1,7 @@
 <?php
 require_once('../model/usermodel.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $user =$_POST['id'];
 
     //print_r($_POST);
@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../view/adminblog.php?msg=update_failed');
         exit;
     }
-} else {
-    header('Location: ../view/adminblog.php');
-    exit;
-}
+// //  else {
+// //     header('Location: ../view/adminblog.php');
+// //     exit;
+// }
 ?>

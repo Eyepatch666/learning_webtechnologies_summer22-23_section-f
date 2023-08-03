@@ -25,7 +25,7 @@ function createTableRows(data) {
 
 function searchCourses() {
     const searchQuery = document.getElementById('searchQuery').value;
-    console.log(searchQuery);
+    //console.log(searchQuery);
 
     const xhr = new XMLHttpRequest();
 

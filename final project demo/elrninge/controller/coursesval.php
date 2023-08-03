@@ -1,17 +1,17 @@
 <?php
-require_once('usermodel.php');
+require_once('../model/usermodel.php');
 session_start();
 
 if (!isset($_COOKIE['status'])) {
-    header('Location: login.php?error=bad_request');
+    header('Location: ../view/login.php?error=bad_request');
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['cname'] ?? '';
-    $category = $_POST['category'] ?? '';
-    $instructor_id = $_POST['instructor_id'] ?? ''; 
-    $description = $_POST['cdescription'] ?? '';
+
+    $name = $_POST['cname'];
+    $category = $_POST['category'];
+    $instructor_id = $_POST['instructor_id']; 
+    $description = $_POST['cdescription'];
 
     if (validateFormInputs($name, $category, $instructor_id, $description)) {
         if (isset($_FILES['cover']) && $_FILES['cover']['error'] === 0) {
@@ -22,18 +22,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($_FILES['cover']['size'] > 500000) {
                 $uploadOk = 0;
-                header('Location: courses.php?error=file_size');
+                header('Location: ../view/courses.php?error=file_size');
                 exit;
             }
 
             if ($imageFileType !== 'jpg' && $imageFileType !== 'png' && $imageFileType !== 'jpeg') {
                 $uploadOk = 0;
-                header('Location: courses.php?error=invalid_format');
+                header('Location: ../view/courses.php?error=invalid_format');
                 exit;
             }
 
             if ($uploadOk === 0) {
-                header('Location: courses.php?error=cover_upload_failed');
+                header('Location: ../view/courses.php?error=cover_upload_failed');
                 exit;
             } else {
                 if (move_uploaded_file($src, $des)) {
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = mysqli_query($con, $query);
 
                     if ($result) {
-                        header('Location: courses.php?message=success');
+                        header('Location: ../view/courses.php?message=success');
                         exit;
                     } else {
                         echo "Error: " . mysqli_error($con);
@@ -55,19 +55,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     mysqli_close($con);
                 } else {
-                    header('Location: courses.php?error=cover_upload_failed');
+                    header('Location: ../view/courses.php?error=cover_upload_failed');
                     exit;
                 }
             }
         } else {
-            header('Location: courses.php?error=cover_not_selected');
+            header('Location: ../view/courses.php?error=cover_not_selected');
             exit;
         }
     } else {
-        header('Location: courses.php?error=invalid_input');
+        header('Location: ../view/courses.php?error=invalid_input');
         exit;
     }
-}
+
 
 function validateFormInputs($name, $category, $instructor_id, $description) {
     if ($name === "" || $category === "" || $instructor_id === "" || $description === "") {

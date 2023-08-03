@@ -7,11 +7,10 @@ if (!isset($_COOKIE['status'])) {
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = $_POST['title'] ?? '';
-    $posttype = $_POST['posttype'] ?? '';
-    $link = $_POST['link'] ?? '';
-    $postdescription = $_POST['postdescription'] ?? '';
+    $title = $_POST['title'];
+    $posttype = $_POST['posttype'];
+    $link = $_POST['link'];
+    $postdescription = $_POST['postdescription'];
 
     if ($title == "" || $posttype == "" || $link == "" || $postdescription == "") {
         header('Location: ../view/adminblog.php?error=null');
@@ -47,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         //mysqli_close($con);
     }
-} 
+ 
 
 function isValidVideoLink($link)
 {

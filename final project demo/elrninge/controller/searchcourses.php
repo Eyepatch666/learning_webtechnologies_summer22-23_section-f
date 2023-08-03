@@ -6,8 +6,8 @@ if (!isset($_COOKIE['status'])) {
     header('location: ../view/login.php?error=bad_request');
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $searchQuery = $_GET['search_query'] ?? '';
+
+    $searchQuery = $_GET['search_query'] ;
 
     
     function getMatchingCoursesFromDatabase($searchQuery) {
@@ -52,4 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     //     echo "<td><img src='{$course['cover']}' alt='Course Cover' height='100' width='100'></td>";
     //     echo "</tr>";
     // }
-}
+

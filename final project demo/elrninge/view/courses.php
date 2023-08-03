@@ -75,7 +75,7 @@ mysqli_close($con);
         </tr>
         <tr>
             <td>
-                <form method="post" action="coursesval.php" enctype="multipart/form-data">
+                <form method="post" action="../controller/coursesval.php" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Create Course</legend>
                         <table>
@@ -153,7 +153,7 @@ mysqli_close($con);
     <table border="1" align="center">
     <tr>
             <td>
-                <form method="post" action="coursesval.php" enctype="">
+                <form method="post" action="../controller/coursesval.php" enctype="">
                     <fieldset>
                         <legend>Added Courses:</legend>
                         <table>
@@ -181,7 +181,7 @@ foreach ($courses as $course) {
     echo "<td>{$course['category']}</td>";
     echo "<td>{$course['instructor_id']}</td>";
     echo "<td>{$course['cdescription']}</td>";
-    echo "<td><img src='../{$course['cover']}' alt='' height='100' width='100'></td>";
+    echo "<td><img src='../sources/{$course['cover']}' alt='' height='100' width='100'></td>";
     echo "</tr>";
 }
 // print_r($_POST);

@@ -6,14 +6,14 @@ if (isset($_GET['id'])) {
     $success = deleteBlog($id);
 
     if ($success) {
-        header('Location: allcontents.php?message=delete_success');
+        header('Location: ../view/allcontents.php?message=delete_success');
         exit;
     } else {
-        header('Location: allcontents.php?message=delete_failed');
+        header('Location: ..view/allcontents.php?message=delete_failed');
         exit;
     }
 } else {
-    header('Location: allcontents.php');
+    header('Location: ../view/allcontents.php');
     exit;
 }
 ?>
