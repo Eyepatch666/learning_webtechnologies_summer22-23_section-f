@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(144, 238, 144);
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: rgb(204, 0, 255);
+    text-decoration: none;
+}
+
+.container {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 30px auto;
+    background-color: rgb(127, 255, 212);
+    border-color: black;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+}
+
+.link-button {
+    display: inline-block;
+    background-color: rgb(0, 123, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.link-button:hover {
+    background-color: rgb(0, 86, 179);
+}

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(144, 238, 144);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: rgb(127, 255, 212);
+    border: 1px solid black;
+}
+
+.login-form {
+    padding: 20px;
+}
+
+.login-form legend {
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.link-button {
+    color: rgb(204, 0, 255);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}

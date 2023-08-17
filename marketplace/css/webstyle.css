@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:lightgreen;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+    margin: 100px auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 20px;
+    border: 1px solid rgb(221, 221, 221);
+    text-align: center;
+}
+
+th a, td a {
+    display: inline-block;
+    color: rgb(0, 123, 255);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+th a:hover, td a:hover {
+    background-color: rgb(0, 123, 255);
+    color: rgb(255, 255, 255);
+}
